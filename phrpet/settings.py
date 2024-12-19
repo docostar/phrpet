@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j(87&jekehcj*kj^fy4w&2i1j!6hx&1r)&#7=yph*7^zo4p4@c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rokan.online','phr.rokan.online',]
 
 
 # Application definition
