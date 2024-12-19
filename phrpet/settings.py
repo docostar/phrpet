@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,11 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j(87&jekehcj*kj^fy4w&2i1j!6hx&1r)&#7=yph*7^zo4p4@c'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = ['rokan.online','phr.rokan.online',]
 
@@ -38,6 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+EXTERNAL_APPS = [
+        'home',
+]
+
+INSTALLED_APPS = INSTALLED_APPS + EXTERNAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,8 +85,13 @@ WSGI_APPLICATION = 'phrpet.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv("DB_NAME"),  # The name of your database
+        'USER': os.getenv("DB_USER"),      # The username for PostgreSQL
+        'PASSWORD': os.getenv("DB_PASSWORD"),  # The password for the user
+        'HOST': os.getenv("DB_HOST"),   # Set to your database host, or use 'localhost' for local setups
+        'PORT': os.getenv("DB_PORT"),        # Default PostgreSQL port
+        
     }
 }
 
