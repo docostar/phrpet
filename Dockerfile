@@ -1,8 +1,8 @@
 # Use an official Python runtime as the base image
-FROM python
+FROM python:3.12
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /djangoapp
 
 # Install any dependencies required by the application
 COPY requirements.txt .
