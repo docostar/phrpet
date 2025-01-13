@@ -29,7 +29,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ['rokan.online','phr.rokan.online',]
+ALLOWED_HOSTS = ['code.rokan.online','rokan.online','phr.rokan.online','https://phr.rokan.online']
+
+CSRF_TRUSTED_ORIGINS = ['https://phr.rokan.online', 'https://www.phr.rokan.online']
 
 
 # Application definition
@@ -146,3 +148,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
