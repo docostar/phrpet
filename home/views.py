@@ -10,4 +10,5 @@ def shop_view(request):
 
 def product_detail(request,product_id):
     product = get_object_or_404(Product, id=product_id)
-    return render(request, 'home/products.html', {'product': product})
+    benefits_list = product.benefits.split(",") if product.benefits else []
+    return render(request, 'home/products.html', {'product': product, 'benefits_list': benefits_list})

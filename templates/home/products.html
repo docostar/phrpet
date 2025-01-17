@@ -15,6 +15,7 @@ Shop Page
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">{{product.category.name}}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Shop Details</li>
                         </ol>
                     </nav>
@@ -85,6 +86,14 @@ Shop Page
                         <div class="shop-details-bottom">
                             <ul>
                                 <li class="sd-category">
+                                    <span class="title">Composition :</span>
+                                    <p>{{ product.composition }}</p>
+                                </li>
+                                <li class="sd-packing">
+                                    <span class="title">Packing :</span>
+                                    {{ product.packing }}
+                                </li>
+                                <li class="sd-category">
                                     <span class="title">Categories :</span>
                                     <a href="shop.html">{{ product.category.name }}</a>
                                 </li>
@@ -112,7 +121,7 @@ Shop Page
                     <ul class="nav nav-tabs" id="myTabTwo" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab"
-                                aria-controls="details" aria-selected="true">Details More</a>
+                                aria-controls="details" aria-selected="true">Benifits</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="val-tab" data-toggle="tab" href="#val" role="tab" aria-controls="val"
@@ -126,8 +135,11 @@ Shop Page
                     <div class="tab-content" id="myTabContentTwo">
                         <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
                             <div class="product-desc-content">
-                                <p>The domestic dog is a doiated dendant of the wolf. The dog derived from an ancient, extinct wolf, and the modern grey wolf is the dog's nearest living relative. The dog was the first species to be domesticated, by hunter–gatherers. These will include the core vaccines, which are administered in a series of three: at 6-, 12-, and 16 weeks old. doiated dendant of the wolf. The dog derived from an ancient, extinct wolf, and the modern grey wolf is the dog's nearest</p>
-                                <p>These will include the core vaccines, which are administered in a series of three: at 6-, 12-, and 16 weeks old. doiated dendant of the wolf. The dog derived from an ancient, extinct wolf, and the modern grey wolf is the dog's nearest include the core vaccines, which are administered.</p>
+                                <ul class="product-desc-list">
+                                    {% for benefit in benefits_list %}
+                                        <li>{{ benefit }}</li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="val" role="tabpanel" aria-labelledby="val-tab">
