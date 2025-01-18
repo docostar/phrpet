@@ -186,81 +186,30 @@ Shop Page
         <div class="related-products-wrap">
             <h2 class="title">Related Products</h2>
             <div class="row related-product-active">
-                <div class="col-lg-3">
-                    <div class="shop-item mb-55">
-                        <div class="shop-thumb">
-                            <a href="shop-details.html"><img src="{% static 'img/product/shop_item01.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="shop-content">
-                            <span>Dog toy’s</span>
-                            <h4 class="title"><a href="shop-details.html">Pet Knit Knacks</a></h4>
-                            <div class="shop-content-bottom">
-                                <span class="price">$28.00</span>
-                                <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                            </div>
-                        </div>
-                    </div>
+                {% for related_product in related_products %}
+
+        <div class="col-lg-3">
+            <div class="shop-item mb-55">
+                <div class="shop-thumb">
+                    <a href="{% url 'product_detail' related_product.id %}">
+                        {% if related_product.images.exists %}
+                            <img src="{{ related_product.images.first.image.url }}" alt="{{ related_product.name }}">
+                        {% else %}
+                            <img src="{% static 'phrlogo.jpg' %}" alt="No Image Available">
+                        {% endif %}
+                    </a>
                 </div>
-                <div class="col-lg-3">
-                    <div class="shop-item mb-55">
-                        <div class="shop-thumb">
-                            <a href="shop-details.html"><img src="{% static 'img/product/shop_item02.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="shop-content">
-                            <span>Dog toy’s</span>
-                            <h4 class="title"><a href="shop-details.html">Squeaky Dog</a></h4>
-                            <div class="shop-content-bottom">
-                                <span class="price">$19.00</span>
-                                <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="shop-content">
+                    <span>{{ related_product.category.name }}</span>
+                    <h4 class="title">
+                        <a href="{% url 'product_detail' related_product.id %}">{{ related_product.name }}</a>
+                    </h4>
                 </div>
-                <div class="col-lg-3">
-                    <div class="shop-item mb-55">
-                        <div class="shop-thumb">
-                            <a href="shop-details.html"><img src="{% static 'img/product/shop_item03.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="shop-content">
-                            <span>Dog toy’s</span>
-                            <h4 class="title"><a href="shop-details.html">Pet Knit Knacks</a></h4>
-                            <div class="shop-content-bottom">
-                                <span class="price">$29.00</span>
-                                <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="shop-item mb-55">
-                        <div class="shop-thumb">
-                            <a href="shop-details.html"><img src="{% static 'img/product/shop_item04.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="shop-content">
-                            <span>Dog toy’s</span>
-                            <h4 class="title"><a href="shop-details.html">Yoda Carriage</a></h4>
-                            <div class="shop-content-bottom">
-                                <span class="price">$49.00</span>
-                                <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="shop-item mb-55">
-                        <div class="shop-thumb">
-                            <a href="shop-details.html"><img src="{% static 'img/product/shop_item05.jpg' %}" alt=""></a>
-                        </div>
-                        <div class="shop-content">
-                            <span>Dog toy’s</span>
-                            <h4 class="title"><a href="shop-details.html">Pet Carriage</a></h4>
-                            <div class="shop-content-bottom">
-                                <span class="price">$09.00</span>
-                                <span class="add-cart"><a href="shop-details.html">ADD +</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+        </div>
+    {% empty %}
+        <p>No related products available.</p>
+    {% endfor %}
             </div>
         </div>
     </div>
