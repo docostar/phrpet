@@ -40,7 +40,7 @@ Shop Page
                                      role="tabpanel" 
                                      aria-labelledby="item-{{ forloop.counter }}-tab">
                                     <div class="shop-details-img">
-                                        <img src="{{ image.image.url }}" alt="{{ product.name }}" style="width:616px; height:568px; object-fit: cover;">
+                                        <img id="big_img" src="{{ image.image.url }}" alt="{{ product.name }}">
                                     </div>
                                 </div>
                             {% endfor %}
@@ -57,7 +57,7 @@ Shop Page
                                        role="tab" 
                                        aria-controls="item-{{ forloop.counter }}" 
                                        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
-                                        <img src="{{ image.image.url }}" alt="{{ product.name }}" style="width:123px; height:123px; object-fit: cover;">
+                                        <img id="small_img" src="{{ image.image.url }}" alt="{{ product.name }}">
                                     </a>
                                 </li>
                             {% endfor %}
@@ -193,9 +193,9 @@ Shop Page
                 <div class="shop-thumb">
                     <a href="{% url 'product_detail' related_product.id %}">
                         {% if related_product.images.exists %}
-                            <img src="{{ related_product.images.first.image.url }}" alt="{{ related_product.name }}">
+                            <img id="related_img" src="{{ related_product.images.first.image.url }}" alt="{{ related_product.name }}">
                         {% else %}
-                            <img src="{% static 'phrlogo.jpg' %}" alt="No Image Available">
+                            <img id="related_img" src="{% static 'phrlogo.jpg' %}" alt="No Image Available">
                         {% endif %}
                     </a>
                 </div>

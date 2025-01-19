@@ -1,0 +1,19 @@
+#related_img {
+    width: 278px;
+    height: 268px;
+    object-fit: cover; /* Ensures the image covers the dimensions without distortion */
+}
+
+#big_img
+{
+    width:616px; 
+    height:568px; 
+    object-fit: cover;
+}
+
+#small_img
+{
+    width:123px; 
+    height:123px; 
+    object-fit: cover;
+}
