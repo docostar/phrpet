@@ -1,0 +1,151 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block title %}
+Category-{{category}}
+{% endblock %}
+
+{% block main %}
+<section class="breadcrumb-area breadcrumb-bg" data-background="{% static 'img/bg/breadcrumb_bg.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="title">{{ category.name }}</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ category.name }}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb-area-end -->
+
+<!-- shop-area -->
+<div class="shop-area pt-110 pb-110">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-8 order-2 order-lg-0">
+                <aside class="shop-sidebar">
+                    <div class="widget">
+                        <div class="sidebar-search">
+                            <form action="#">
+                                <input type="text" placeholder="Search ...">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <h4 class="sidebar-title">Category</h4>
+                        <div class="shop-cat-list">
+                            <ul>
+                                {% for category in categories %}
+                                    <li>
+                                        <a href="{% url 'category' category.id %}">{{ category.name }} <span>+</span></a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    
+                </aside>
+            </div>
+            <div class="col-lg-9">
+                <div class="shop-wrap">
+                    <h4 class="title">Shop</h4>
+                    <div class="shop-page-meta mb-30">
+                        <div class="shop-grid-menu">
+                            <ul>
+                                <li class="active"><a href="#"><i class="fas fa-th"></i></a></li>
+                                <li><a href="#"><i class="fas fa-list"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="shop-showing-result">
+                            <p>Total Items 1-12 of 13</p>
+                        </div>
+                        <div class="shop-show-list">
+                            <form action="#">
+                                <label for="show">Show</label>
+                                <select id="show" class="selected">
+                                    <option value="">08</option>
+                                    <option value="">12</option>
+                                    <option value="">16</option>
+                                    <option value="">18</option>
+                                    <option value="">20</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="shop-short-by">
+                            <form action="#">
+                                <label for="shortBy">Sort By</label>
+                                <select id="shortBy" class="selected">
+                                    <option value="">Sort by latest</option>
+                                    <option value="">Low to high</option>
+                                    <option value="">High to low</option>
+                                    <option value="">Popularity</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        {% for product in category.products.all%}
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="shop-item mb-55">
+                                <div class="shop-thumb">
+                                    {% if product.images.exists %}
+                                        <a href="{% url 'product_detail' product.id %}"><img id="related_img" src="{{ product.images.first.image.url }}" alt="{{ related_product.name }}"></a>
+                                    {% else %}
+                                        <a href="{% url 'product_detail' product.id %}"><img id="related_img" src="{% static 'phrlogo.jpg' %}" alt="No Image Available"></a>
+                                    {% endif %}
+                                    
+                                </div>
+                                <div class="shop-content">
+                                    <span>{{product.category.name}}</span>
+                                    <h4 class="title"><a href="{% url 'product_detail' product.id %}">{{product.name}}</a></h4>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="shop-page-meta">
+                        <div class="shop-grid-menu">
+                            <ul>
+                                <li class="active"><a href="#"><i class="fas fa-th"></i></a></li>
+                                <li><a href="#"><i class="fas fa-list"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="shop-showing-result">
+                            <p>Total Items 1-12 of 13</p>
+                        </div>
+                        <div class="shop-show-list">
+                            <form action="#">
+                                <label for="bottomShow">Show</label>
+                                <select id="bottomShow" class="selected">
+                                    <option value="">08</option>
+                                    <option value="">12</option>
+                                    <option value="">16</option>
+                                    <option value="">18</option>
+                                    <option value="">20</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="shop-pagination">
+                            <ul>
+                                <li class="active"><a href="shop.html">1</a></li>
+                                <li><a href="shop.html">2</a></li>
+                                <li><a href="shop.html"><i class="fas fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- shop-area-end -->
+{% endblock %}

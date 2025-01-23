@@ -1,7 +1,7 @@
 {% extends "home/base.html" %}
 {% load static %}
 {% block title %}
-Shop Page
+Product-{{product.name}}
 {% endblock %}
 
 {% block main %}
@@ -11,11 +11,11 @@ Shop Page
         <div class="row">
             <div class="col-12">
                 <div class="breadcrumb-content">
-                    <h2 class="title">Shop Single</h2>
+                    <h2 class="title">{{ product.name }}</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item"><a href="index.html">{{product.category.name}}</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'category' product.category.id %}">{{product.category.name}}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Shop Details</li>
                         </ol>
                     </nav>
@@ -95,7 +95,7 @@ Shop Page
                                 </li>
                                 <li class="sd-category">
                                     <span class="title">Categories :</span>
-                                    <a href="shop.html">{{ product.category.name }}</a>
+                                    <a href="{% url 'category' product.category.id %}">{{ product.category.name }}</a>
                                 </li>
                                 <li class="sd-sku">
                                     <span class="title">SKU :</span>

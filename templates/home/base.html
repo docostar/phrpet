@@ -54,16 +54,16 @@
                     <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
                     <div class="menu-wrap">
                         <nav class="menu-nav show">
-                            <div class="logo"><a href="index.html"><img src="{% static 'img/logo/logo.png' %}" alt=""></a></div>
+                            <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'img/logo/logo.png' %}" alt=""></a></div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
-                                    <li class="active menu-item-has-children"><a href="index.html">Home</a>
+                                    <li class="active menu-item-has-children"><a href="{% url 'home' %}">Home</a>
                                         <ul class="submenu">
-                                            <li><a href="index.html">Home One</a></li>
-                                            <li class="active"><a href="index-2.html">Home Two</a></li>
+                                            <li><a href="{% url 'home' %}">Home One</a></li>
+                                            <li class="active"><a href="{% url 'home2' %}">Home Two</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="dog-list.html">Dog List</a></li>
+                                    <li><a href="{% url 'category' '5'%}">Products</a></li>
                                     <li class="menu-item-has-children"><a href="shop.html">Shop</a>
                                         <ul class="submenu">
                                             <li><a href="shop.html">Our Shop</a></li>
@@ -144,7 +144,7 @@
                     <div class="mobile-menu">
                         <nav class="menu-box">
                             <div class="close-btn"><i class="fas fa-times"></i></div>
-                            <div class="nav-logo"><a href="index.html"><img src="{% static 'img/logo/logo.png' %}" alt="" title=""></a></div>
+                            <div class="nav-logo"><a href="{% url 'home' %}"><img src="{% static 'img/logo/logo.png' %}" alt="" title=""></a></div>
                             <div class="menu-outer">
                                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                             </div>
@@ -202,7 +202,7 @@
                 <div class="col-3">
                     <div class="footer-widget">
                         <div class="f-logo">
-                            <a href="index.html"><img src="{% static 'img/logo/logo.png' %}" alt=""></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/logo.png' %}" alt=""></a>
                         </div>
                         <div class="footer-text">
                             <p>The best overall dog DNA test Embark Breed & Health Kit (view at Chewy) which provides overall dog you.</p>
@@ -210,7 +210,7 @@
                         <div class="footer-contact">
                             <div class="icon"><i class="fas fa-headphones"></i></div>
                             <div class="content">
-                                <h4 class="title"><a href="tel:0987654321">747-800-9880</a></h4>
+                                <h4 class="title"><a href="tel:9624000995">96240 00995</a></h4>
                                 <span>Call Now</span>
                             </div>
                         </div>
@@ -281,7 +281,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright-text">
-                        <p>Copyright &copy; 2021 Petco. All Rights Reserved.</p>
+                        <p>Copyright &copy; 2025 Premium Health Remedies. All Rights Reserved.</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-none d-md-block">
@@ -292,9 +292,9 @@
                                 <img src="{% static 'img/icon/united-states.png' %}" alt="English">English
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <a class="dropdown-item" href="index.html"><img src="{% static 'img/icon/russia.png' %}" alt="">Russia</a>
-                                <a class="dropdown-item" href="index.html"><img src="{% static 'img/icon/thailand.png' %}" alt="">Thailand</a>
-                                <a class="dropdown-item" href="index.html"><img src="{% static 'img/icon/india.png' %}" alt="">India</a>
+                                <a class="dropdown-item" href="{% url 'home' %}"><img src="{% static 'img/icon/russia.png' %}" alt="">Russia</a>
+                                <a class="dropdown-item" href="{% url 'home' %}"><img src="{% static 'img/icon/thailand.png' %}" alt="">Thailand</a>
+                                <a class="dropdown-item" href="{% url 'home' %}"><img src="{% static 'img/icon/india.png' %}" alt="">India</a>
                             </div>
                         </div>
                     </div>
