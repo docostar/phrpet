@@ -61,55 +61,56 @@ Home Page
             
             <!-- slider-area-end -->
 
-            <!-- find-area -->
-            <div class="find-area">
-                <div class="container custom-container">
-                    <div class="row">
-                        <div class="col-12">
-                            <form action="#">
-                                <div class="find-wrap">
-                                    <div class="location">
-                                        <i class="flaticon-location"></i>
-                                        <input type="text" value="Enter City, State. or Zip">
-                                    </div>
-                                    <div class="find-category">
-                                        <ul>
-                                            <li><a href="shop.html"><i class="flaticon-dog"></i> Find Your Dog</a></li>
-                                            <li><a href="shop.html"><i class="flaticon-happy"></i> Find Your Cat</a></li>
-                                            <li><a href="shop.html"><i class="flaticon-dove"></i> Find Your Birds</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="other-find">
-                                        <div class="dropdown">
-                                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                Find Other Pets
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="shop.html">Find Your Dog</a>
-                                                <a class="dropdown-item" href="shop.html">Find Your Cat</a>
-                                                <a class="dropdown-item" href="shop.html">Find Your Birds</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+           <!-- counter-area -->
+           <section class="counter-area counter-bg" data-background="{% static 'img/bg/counter_bg.jpg' %}">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="counter-title text-center mb-65">
+                            <h6 class="sub-title">Why Choose Us?</h6>
+                            <h2 class="title">Innovative, trusted pet care for India’s vets and pet parents.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="counter-item">
+                            <h2 class="count"><span class="odometer" data-count="300"></span>+</h2>
+                            <p>vets trust us</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="counter-item">
+                            <h2 class="count"><span class="odometer" data-count="70"></span>+</h2>
+                            <p>Products</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="counter-item">
+                            <h2 class="count"><span class="odometer" data-count="10"></span>+</h2>
+                            <p>Registered brand</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="counter-item">
+                            <h2 class="count"><span class="odometer" data-count="5"></span>+</h2>
+                            <p>Years Of History</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- find-area-end -->
+        </section>
+        <!-- counter-area-end -->
 
-                <!-- breeder-area -->
+        <!-- breeder-area -->
         <section class="breeder-area breeder-bg">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-4 col-lg-8">
                         <div class="adoption-content">
-                            <h2 class="title">Working For <br> Dog <span>Breeder</span> Free, Happy Time</h2>
-                            <p>The best overall dog DNA test is Embark Breed & Health Kit view at Chewy which provides you with breed brown and
-                                information.</p>
-                            <a href="breeder.html" class="btn">Breeding 
+                            <h2 class="title">Partnering with <span> Premium Health Remedies:</span> Ensuring Joyful Pet Health! </h2>
+                            <p>For vets and pet lovers in India: Choose Premium Health Remedies for innovative, quality products. We combine expert care with love, bringing you solutions trusted by professionals and cherished by pet parents.</p>
+                            <a href="{% url 'category' '2'%}" class="btn">Products 
                                 <img src="{% static 'img/icon/w_pawprint.png' %}" alt="">
                             </a>
                         </div>
@@ -161,36 +162,7 @@ Home Page
                     </div>
                 </div>
             </div>
-            <div class="counter-area mt-70">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="counter-item">
-                                <h2 class="count"><span class="odometer" data-count="73"></span>%</h2>
-                                <p>dogs are first bred</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="counter-item">
-                                <h2 class="count"><span class="odometer" data-count="259"></span>+</h2>
-                                <p>Most dogs are first</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="counter-item">
-                                <h2 class="count"><span class="odometer" data-count="39"></span>K</h2>
-                                <p>Dog Breeding</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="counter-item">
-                                <h2 class="count"><span class="odometer" data-count="45"></span>+</h2>
-                                <p>Years Of History</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </section>
         <!-- breeder-area-end -->
 
@@ -374,7 +346,6 @@ Home Page
             </section>
             <!-- faq-area-end -->
         
-
             <!-- brand-area -->
             <div class="brand-area pt-80 pb-80">
                 <div class="container">
@@ -418,6 +389,82 @@ Home Page
                 </div>
             </div>
             <!-- brand-area-end -->
+
+             <!-- testimonial-area -->
+             <section class="testimonial-area testimonial-bg">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7 col-lg-9">
+                            <div class="section-title text-center mb-65">
+                                <div class="section-icon"><img src="{% static 'img/icon/pawprint.png' %}" alt=""></div>
+                                <h5 class="sub-title">Testimonials</h5>
+                                <h2 class="title">Our Happy Customers</h2>
+                                <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provides you with a
+                                    breed brwn and information Most dogs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row testimonial-active">
+                        <div class="col-lg-6">
+                            <div class="testimonial-item">
+                                <div class="testi-avatar-thumb">
+                                    <img src="{% static 'img/images/testi_avatar01.png' %}" alt="">
+                                </div>
+                                <div class="testi-content">
+                                    <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
+                                    <div class="testi-avatar-info">
+                                        <h5 class="title">Alessia Cara</h5>
+                                        <span>Googel CEO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="testimonial-item">
+                                <div class="testi-avatar-thumb">
+                                    <img src="{% static 'img/images/testi_avatar02.png' %}" alt="">
+                                </div>
+                                <div class="testi-content">
+                                    <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
+                                    <div class="testi-avatar-info">
+                                        <h5 class="title">Alessia Cara</h5>
+                                        <span>Googel CEO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="testimonial-item">
+                                <div class="testi-avatar-thumb">
+                                    <img src="{% static 'img/images/testi_avatar01.png' %}" alt="">
+                                </div>
+                                <div class="testi-content">
+                                    <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
+                                    <div class="testi-avatar-info">
+                                        <h5 class="title">Alessia Cara</h5>
+                                        <span>Googel CEO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="testimonial-item">
+                                <div class="testi-avatar-thumb">
+                                    <img src="{% static 'img/images/testi_avatar02.png' %}" alt="">
+                                </div>
+                                <div class="testi-content">
+                                    <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
+                                    <div class="testi-avatar-info">
+                                        <h5 class="title">Alessia Cara</h5>
+                                        <span>Googel CEO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- testimonial-area-end -->
 
             <!-- blog-area -->
             <section class="blog-area pt-110 pb-60">
@@ -503,27 +550,4 @@ Home Page
             </section>
             <!-- blog-area-end -->
 
-            <!-- newsletter-area -->
-            <div class="newsletter-area pb-110">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="newsletter-wrap">
-                                <div class="newsletter-content">
-                                    <h2 class="title">Newsletter For</h2>
-                                    <p><span>*</span> Do Not Show Your Email.</p>
-                                </div>
-                                <div class="newsletter-form">
-                                    <form action="#">
-                                        <input type="email" placeholder="Enter Your Email...">
-                                        <button type="submit" class="btn">Subscribe</button>
-                                    </form>
-                                </div>
-                                <div class="newsletter-shape"><img src="{% static 'img/images/newsletter_shape01.png' %}" alt=""></div>
-                                <div class="newsletter-shape shape-two"><img src="{% static 'img/images/newsletter_shape02.png' %}" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 {% endblock %}
