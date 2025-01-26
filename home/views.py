@@ -1,10 +1,17 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Product,Category
+from .models import Product,Category,FAQ,Testimonial
 from random import shuffle
+from .forms import ContactForm
+from django.contrib import messages
+from django.http import HttpResponse
+from django.core.mail import send_mail
 
 # Create your views here.
 def home_view(request):
-    return render(request, 'home/index.html')
+    categories = Category.objects.all()
+    faqs = FAQ.objects.filter(is_active=True)  # Fetch only active FAQ
+    testimonials = Testimonial.objects.filter(is_active=True)  # Fetch only active testimonials
+    return render(request, 'home/index.html',{'categories': categories,'faqs':faqs,'testimonials':testimonials})
 
 def home2_view(request):
     return render(request, 'Petco/index.html')
@@ -31,3 +38,47 @@ def categories_view(request,category_id):
     categories = Category.objects.all()
     category = get_object_or_404(Category, id=category_id)
     return render(request, 'home/category.html',{'categories': categories,'category':category})
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            # Compose email
+            subject = f"New Contact Form Submission: {name}"
+            full_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+            from_email = 'matrufinancial@gmail.com'  # Your Gmail address
+            recipient_list = ['rahulbusiness2012@gmail.com'] # Replace with the desired recipient email
+
+            try:
+                send_mail(
+                    subject,
+                    full_message,
+                    from_email,
+                    recipient_list,  
+                )
+                messages.success(request, 'Your message has been sent successfully!')
+            except Exception as e:
+                messages.error(request, f"Failed to send your message: {str(e)}")
+                
+        else:
+            messages.error(request, "Please correct the errors in the form.")
+    else:
+        form = ContactForm()
+
+    return render(request, 'home/contact.html', {'form': form})
+
+
+def send_email_view(request):
+    subject = 'Hello from Django'
+    message = 'Djngo Testing.'
+    from_email = 'matrufinancial@gmail.com'  # Your Gmail address
+    recipient_list = ['rahulbusiness2012@gmail.com','rokanmitra@gmail.com']  # Change to the recipient's email
+
+    try:
+        send_mail(subject, message, from_email, recipient_list)
+        return HttpResponse('Email sent successfully!')
+    except Exception as e:
+        return HttpResponse(f'Error: {str(e)}')

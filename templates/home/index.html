@@ -167,7 +167,7 @@ Home Page
         <!-- breeder-area-end -->
 
 
-                    <!-- adoption-area -->
+                    <!-- Category-area -->
         <section class="adoption-area-two pt-110 pb-110">
             <div class="container">
                 <div class="row justify-content-center">
@@ -176,103 +176,42 @@ Home Page
                             <div class="section-icon">
                                 <img src="{% static 'img/icon/pawprint.png' %}" alt="">
                             </div>
-                            <h5 class="sub-title">Meet the animals</h5>
-                            <h2 class="title">Puppies Waiting for Adoption</h2>
-                            <p>The best overall dog DNA test is Embark Breed &amp; Health Kit (view at Chewy), which provides you with a
-                                breed brwn and information most dogs</p>
+                            <h5 class="sub-title">Look PHR Products</h5>
+                            <h2 class="title">Our innovative Product Category</h2>
+                            <p>Advanced care solutions, natural supplements, disease prevention, recovery aids, and tailored remedies for pets' wellness.
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container custom-container">
                 <div class="row adopt-active">
-                    <div class="col-xl-3">
-                        <div class="adoption-item">
-                            <div class="adopt-thumb">
-                                <a href="breeder-details.html"><img src="{% static 'img/images/adop_img01.png' %}" alt=""></a>
-                                <span class="status">Free</span>
-                            </div>
-                            <div class="adopt-content">
-                                <div class="adopt-date"><i class="far fa-calendar-alt"></i> Birth : 2021</div>
-                                <h3 class="title"><a href="breeder-details.html">Golden Retriever</a></h3>
-                                <p>The Golden Retriever is a medium-large gun dog that was bred.</p>
-                                <a href="breeder-details.html" class="read-more">Read More 
-                                    <img src="{% static 'img/icon/pawprint.png' %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="adoption-item">
-                            <div class="adopt-thumb">
-                                <a href="breeder-details.html"><img src="{% static 'img/images/adop_img02.png' %}" alt=""></a>
-                                <span class="status">Free</span>
-                            </div>
-                            <div class="adopt-content">
-                                <div class="adopt-date"><i class="far fa-calendar-alt"></i> Birth : 2021</div>
-                                <h3 class="title"><a href="breeder-details.html">German Sharped</a></h3>
-                                <p>The German Shepherd is a breed of medium to large-sized.</p>
-                                <a href="breeder-details.html" class="read-more">Read More 
-                                    <img src="{% static 'img/icon/pawprint.png' %}" alt="">
-                                </a>
+                    {% for category in categories %}
+                        <div class="col-xl-3">
+                            <div class="adoption-item">
+                                <div class="adopt-thumb">
+                                    <a href="{% url 'category' category.id %}">
+                                        <img id="home_img" src="{{ category.image.url }}" alt="{{ category.name }}">
+                                    </a>
+                                    <span class="status">New</span>
+                                </div>
+                                <div class="adopt-content">
+                                    <div class="adopt-date"><i class="far fa-calendar-alt"></i> Created: {{ category.created_at|date:"Y" }}</div>
+                                    <h3 class="title">
+                                        <a href="{% url 'category' category.id %}">{{ category.name }}</a>
+                                    </h3>
+                                    <p>{{ category.description }}</p>
+                                    <a href="{% url 'category' category.id %}" class="read-more">Explore More
+                                        <img src="{% static 'img/icon/pawprint.png' %}" alt="Pawprint">
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="adoption-item">
-                            <div class="adopt-thumb">
-                                <a href="breeder-details.html"><img src="{% static 'img/images/adop_img03.png' %}" alt=""></a>
-                                <span class="status">Free</span>
-                            </div>
-                            <div class="adopt-content">
-                                <div class="adopt-date"><i class="far fa-calendar-alt"></i> Birth : 2021</div>
-                                <h3 class="title"><a href="breeder-details.html">Siberian Husky</a></h3>
-                                <p>The Siberian Husky is a medium-sized working sled dog breed.</p>
-                                <a href="breeder-details.html" class="read-more">Read More 
-                                    <img src="{% static 'img/icon/pawprint.png' %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="adoption-item">
-                            <div class="adopt-thumb">
-                                <a href="breeder-details.html"><img src="{% static 'img/images/adop_img04.png' %}" alt=""></a>
-                                <span class="status">Free</span>
-                            </div>
-                            <div class="adopt-content">
-                                <div class="adopt-date"><i class="far fa-calendar-alt"></i> Birth : 2021</div>
-                                <h3 class="title"><a href="breeder-details.html">French Bulldog</a></h3>
-                                <p>French Bulldog is a breed of domestic dog, bred to be companion.</p>
-                                <a href="breeder-details.html" class="read-more">Read More 
-                                    <img src="{% static 'img/icon/pawprint.png' %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3">
-                        <div class="adoption-item">
-                            <div class="adopt-thumb">
-                                <a href="breeder-details.html"><img src="{% static 'img/images/adop_img05.png' %}" alt=""></a>
-                                <span class="status">Free</span>
-                            </div>
-                            <div class="adopt-content">
-                                <div class="adopt-date"><i class="far fa-calendar-alt"></i> Birth : 2021</div>
-                                <h3 class="title"><a href="breeder-details.html">Siberian Husky</a></h3>
-                                <p>French Bulldog is a breed of domestic dog, bred to be companion.</p>
-                                <a href="breeder-details.html" class="read-more">Read More 
-                                    <img src="{% static 'img/icon/pawprint.png' %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                 </div>
             </div>
         </section>
-        <!-- adoption-area-end -->
-
-
-      
+        <!-- Category-area-end -->
 
             <!-- faq-area -->
             <section class="faq-area faq-bg">
@@ -289,54 +228,28 @@ Home Page
                             <div class="faq-wrapper">
                                 <div class="section-title mb-35">
                                     <h5 class="sub-title">FAQ Question</h5>
-                                    <h2 class="title">History & Family Adoption</h2>
+                                    <h2 class="title">History & More About PHR</h2>
                                 </div>
                                 <div class="accordion" id="accordionExample">
+                                    {% for faq in faqs %}
                                     <div class="card">
-                                        <div class="card-header" id="headingOne">
+                                        <div class="card-header" id="heading{{ forloop.counter }}">
                                             <h2 class="mb-0">
                                                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    Working for dog adoption
+                                                    data-target="#collapse{{ forloop.counter }}" aria-expanded="{{ forloop.first|yesno:'true,false' }}"
+                                                    aria-controls="collapse{{ forloop.counter }}">
+                                                    {{ faq.question }}
                                                 </button>
                                             </h2>
                                         </div>
-                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.first %}show{% endif %}" 
+                                            aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionExample">
                                             <div class="card-body">
-                                                The best overall dog DNA test is embark breed & health Kit (view at Chewy), which provides you with a breed breakdown and information on the ancestors of most dogs.
+                                                {{ faq.answer }}
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingTwo">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    Competitions & Awards
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                The best overall dog DNA test is embark breed & health Kit (view at Chewy), which provides you with a breed breakdown and information on the ancestors of most dogs.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingThree">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    The puppies are 3 months old
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                The best overall dog DNA test is embark breed & health Kit (view at Chewy), which provides you with a breed breakdown and information on the ancestors of most dogs.
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -398,69 +311,29 @@ Home Page
                             <div class="section-title text-center mb-65">
                                 <div class="section-icon"><img src="{% static 'img/icon/pawprint.png' %}" alt=""></div>
                                 <h5 class="sub-title">Testimonials</h5>
-                                <h2 class="title">Our Happy Customers</h2>
-                                <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provides you with a
-                                    breed brwn and information Most dogs</p>
+                                <h2 class="title">Trusted by Many Veterinary Doctors</h2>
+                                <p>Trusted by veterinarians for premium quality products, ensuring optimal 
+                                    pet health and exceptional client satisfaction.</p>
                             </div>
                         </div>
                     </div>
                     <div class="row testimonial-active">
-                        <div class="col-lg-6">
-                            <div class="testimonial-item">
-                                <div class="testi-avatar-thumb">
-                                    <img src="{% static 'img/images/testi_avatar01.png' %}" alt="">
-                                </div>
-                                <div class="testi-content">
-                                    <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
-                                    <div class="testi-avatar-info">
-                                        <h5 class="title">Alessia Cara</h5>
-                                        <span>Googel CEO</span>
+                        {% for testimonial in testimonials %}
+                            <div class="col-lg-6">
+                                <div class="testimonial-item">
+                                    <div class="testi-avatar-thumb">
+                                        <img src="{{ testimonial.picture.url }}" alt="{{ testimonial.doctor_name }}">
+                                    </div>
+                                    <div class="testi-content">
+                                        <p>“ {{ testimonial.description }} ”</p>
+                                        <div class="testi-avatar-info">
+                                            <h5 class="title">{{ testimonial.doctor_name }}</h5>
+                                            <span>{{ testimonial.clinic_name }} - {{ testimonial.doctor_city }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="testimonial-item">
-                                <div class="testi-avatar-thumb">
-                                    <img src="{% static 'img/images/testi_avatar02.png' %}" alt="">
-                                </div>
-                                <div class="testi-content">
-                                    <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
-                                    <div class="testi-avatar-info">
-                                        <h5 class="title">Alessia Cara</h5>
-                                        <span>Googel CEO</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="testimonial-item">
-                                <div class="testi-avatar-thumb">
-                                    <img src="{% static 'img/images/testi_avatar01.png' %}" alt="">
-                                </div>
-                                <div class="testi-content">
-                                    <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
-                                    <div class="testi-avatar-info">
-                                        <h5 class="title">Alessia Cara</h5>
-                                        <span>Googel CEO</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="testimonial-item">
-                                <div class="testi-avatar-thumb">
-                                    <img src="{% static 'img/images/testi_avatar02.png' %}" alt="">
-                                </div>
-                                <div class="testi-content">
-                                    <p>“ The best overall dog DNA test Embark Breed & Health Kit (view at Chewy), which provides with a breed brwn and information ”</p>
-                                    <div class="testi-avatar-info">
-                                        <h5 class="title">Alessia Cara</h5>
-                                        <span>Googel CEO</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>
