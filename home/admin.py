@@ -36,3 +36,4 @@ class TestimonialAdmin(admin.ModelAdmin):
     list_filter = ('doctor_city', 'created_at')  # Filters for admin interface
     search_fields = ('doctor_name', 'clinic_name', 'doctor_city')  # Searchable fields
     ordering = ('-created_at',)  # Order testimonials by creation date (newest first)
+

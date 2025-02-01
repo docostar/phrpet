@@ -82,3 +82,9 @@ def send_email_view(request):
         return HttpResponse('Email sent successfully!')
     except Exception as e:
         return HttpResponse(f'Error: {str(e)}')
+
+def blog_view(request):
+    return render(request, 'home/blog.html')
+
+def about_view(request):
+    return render(request, 'home/about.html')

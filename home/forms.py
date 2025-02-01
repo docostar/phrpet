@@ -26,3 +26,4 @@ class ContactForm(forms.Form):
             'id': 'message'
         })
     )
+

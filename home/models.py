@@ -82,3 +82,18 @@ class Testimonial(models.Model):
                 # Resize the image to 89x89 while maintaining quality
                 img = img.resize((89,89), resample=Image.Resampling.LANCZOS)
                 img.save(picture_path)  # Save the resized image back to the same path
+
+"""
+class NewsletterSubscriber(models.Model):
+    email = models.EmailField(unique=True, max_length=100, verbose_name='Email Address')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Subscription Date')
+
+    class Meta:
+        verbose_name = 'Newsletter Subscriber'
+        verbose_name_plural = 'Newsletter Subscribers'
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.email
+
+"""
