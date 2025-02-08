@@ -44,7 +44,7 @@ Category-{{category}}
                             <ul>
                                 {% for category in categories %}
                                     <li>
-                                        <a href="{% url 'category' category.id %}">{{ category.name }} <span>+</span></a>
+                                        <a href="{% url 'category' category.id %}">{{ category.name }} <span>{{ category.products.count}}+</span></a>
                                     </li>
                                 {% endfor %}
                             </ul>
@@ -65,7 +65,7 @@ Category-{{category}}
                             </ul>
                         </div>
                         <div class="shop-showing-result">
-                            <p>Total Items 1-12 of 13</p>
+                            <p>Total Items 1-{{ category.products.count }} of {{ category.products.count }}</p>
                         </div>
                         <div class="shop-show-list">
                             <form action="#">
@@ -120,7 +120,7 @@ Category-{{category}}
                             </ul>
                         </div>
                         <div class="shop-showing-result">
-                            <p>Total Items 1-12 of 13</p>
+                            <p>Total Items 1-{{ category.products.count }} of {{ category.products.count }}</p>
                         </div>
                         <div class="shop-show-list">
                             <form action="#">
@@ -136,8 +136,8 @@ Category-{{category}}
                         </div>
                         <div class="shop-pagination">
                             <ul>
-                                <li class="active"><a href="shop.html">1</a></li>
-                                <li><a href="shop.html">2</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                               
                                 <li><a href="shop.html"><i class="fas fa-angle-double-right"></i></a></li>
                             </ul>
                         </div>

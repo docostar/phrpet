@@ -14,6 +14,18 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        # Save the object
+        super().save(*args, **kwargs)
+
+        # Resize the uploaded image
+        if self.picture:
+            picture_path = self.picture.path  # Get the file path of the uploaded image
+            with Image.open(picture_path) as img:
+                # Resize the image to 89x89 while maintaining quality
+                img = img.resize((353,353), resample=Image.Resampling.LANCZOS)
+                img.save(picture_path)  # Save the resized image back to the same path
+
 
 class Product(models.Model):
     name = models.CharField(max_length=200)

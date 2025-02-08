@@ -5,6 +5,7 @@ from .forms import ContactForm
 from django.contrib import messages
 from django.http import HttpResponse
 from django.core.mail import send_mail
+from django.db.models import Count
 
 # Create your views here.
 def home_view(request):
@@ -36,6 +37,7 @@ def product_detail(request,product_id):
 
 def categories_view(request,category_id):
     categories = Category.objects.all()
+    Category.objects.annotate(product_count=Count('products'))
     category = get_object_or_404(Category, id=category_id)
     return render(request, 'home/category.html',{'categories': categories,'category':category})
 

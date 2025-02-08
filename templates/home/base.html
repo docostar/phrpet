@@ -54,10 +54,10 @@
                     <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
                     <div class="menu-wrap">
                         <nav class="menu-nav show">
-                            <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'img/logo/logo.png' %}" alt=""></a></div>
+                            <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'img/logo/phr_logo_small.png' %}" alt=""></a></div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
-                                    <li class="active menu-item-has-children"><a href="{% url 'home' %}">Home</a>
+                                    <li><a href="{% url 'home' %}">Home</a>
                                     </li>
                                     <li><a href="{% url 'about' %}">About Us</a></li>
                                     <li><a href="{% url 'category' '5'%}">Products</a></li>
@@ -67,59 +67,12 @@
                                             <li><a href="blog-details.html">Blog Details</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{% url 'contact' %}">Contacts US</a></li>
+                                    <li><a href="{% url 'contact' %}">Contacts Us</a></li>
                                 </ul>
                             </div>
                             <div class="header-action d-none d-md-block">
                                 <ul>
-                                    <li class="header-search"><a href="#"><i class="flaticon-search"></i></a></li>
-                                    <li class="header-shop-cart"><a href="#"><i class="flaticon-shopping-bag"></i><span>2</span></a>
-                                        <ul class="minicart">
-                                            <li class="d-flex align-items-start">
-                                                <div class="cart-img">
-                                                    <a href="#"><img src="{% static 'img/product/cart_p01.jpg' %}" alt=""></a>
-                                                </div>
-                                                <div class="cart-content">
-                                                    <h4><a href="#">The King Charles Spaniel</a></h4>
-                                                    <div class="cart-price">
-                                                        <span class="new">$229.9</span>
-                                                        <span><del>$229.9</del></span>
-                                                    </div>
-                                                </div>
-                                                <div class="del-icon">
-                                                    <a href="#"><i class="far fa-trash-alt"></i></a>
-                                                </div>
-                                            </li>
-                                            <li class="d-flex align-items-start">
-                                                <div class="cart-img">
-                                                    <a href="#"><img src="{% static 'img/product/cart_p02.jpg' %}" alt=""></a>
-                                                </div>
-                                                <div class="cart-content">
-                                                    <h4><a href="#">The Labrador Retriever</a></h4>
-                                                    <div class="cart-price">
-                                                        <span class="new">$229.9</span>
-                                                        <span><del>$229.9</del></span>
-                                                    </div>
-                                                </div>
-                                                <div class="del-icon">
-                                                    <a href="#"><i class="far fa-trash-alt"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="total-price">
-                                                    <span class="f-left">Total:</span>
-                                                    <span class="f-right">$239.9</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="checkout-link">
-                                                    <a href="#">Shopping Cart</a>
-                                                    <a class="black-color" href="#">Checkout</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="header-btn"><a href="adoption.html" class="btn">Adopt Here <img src="{% static 'img/icon/w_pawprint.png' %}" alt=""></a></li>
+                                    <li class="header-btn"><a href="adoption.html" class="btn">Call back <img src="{% static 'img/icon/w_pawprint.png' %}" alt=""></a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -186,7 +139,7 @@
                 <div class="col-3">
                     <div class="footer-widget">
                         <div class="f-logo">
-                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/logo.png' %}" alt=""></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/phr_logo_small.png' %}" alt=""></a>
                         </div>
                         <div class="footer-text">
                             <p>Choose us for high-quality pet products and medicines, trusted by veterinary doctors and pet owners. 
@@ -211,32 +164,26 @@
                 </div>
                 <div class="col-2">
                     <div class="footer-widget">
-                        <h4 class="fw-title">Our Policies</h4>
+                        <h4 class="fw-title">Menu</h4>
                         <div class="fw-link">
                             <ul>
-                                <li><a href="contact.html">Privacy Policy</a></li>
-                                <li><a href="contact.html">Terms and Conditions</a></li>
-                                <li><a href="contact.html">Editorial Policy</a></li>
-                                <li><a href="contact.html">Return Policy</a></li>
-                                <li><a href="contact.html">IP Policy</a></li>
-                                <li><a href="contact.html">Grievance Redressal Policy</a></li>
-                                <li><a href="contact.html">Terms and Conditions</a></li>
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                <li><a href="{% url 'category' '5' %}">Products</a></li>
+                                <li><a href="{% url 'blog' %}">Blog</a></li>
+                                <li><a href="{% url 'contact' %}">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="footer-widget">
-                        <h4 class="fw-title">Our Services</h4>
+                        <h4 class="fw-title">Our Category</h4>
                         <div class="fw-link">
                             <ul>
-                                <li><a href="breeder.html">Our Breeder</a></li>
-                                <li><a href="adoption.html">Our Adoption</a></li>
-                                <li><a href="contact.html">Editorial Policy</a></li>
-                                <li><a href="contact.html">Return Policy</a></li>
-                                <li><a href="contact.html">Grievance Policy</a></li>
-                                <li><a href="contact.html">Redressal Policy</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                {% for category in categories %}
+                                    <li><a href="{% url 'category' category.id %}">{{ category.name }}</a></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
