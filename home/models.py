@@ -1,6 +1,8 @@
 from django.db import models
 from PIL import Image  # Import Pillow's Image class
 import os
+from io import BytesIO
+from django.core.files.base import ContentFile
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -19,8 +21,8 @@ class Category(models.Model):
         super().save(*args, **kwargs)
 
         # Resize the uploaded image
-        if self.picture:
-            picture_path = self.picture.path  # Get the file path of the uploaded image
+        if self.image:
+            picture_path = self.image.path  # Get the file path of the uploaded image
             with Image.open(picture_path) as img:
                 # Resize the image to 89x89 while maintaining quality
                 img = img.resize((353,353), resample=Image.Resampling.LANCZOS)
@@ -49,6 +51,8 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.product.name}"
+
+    
 
 class FAQ(models.Model):
     question = models.CharField(max_length=255, unique=True)

@@ -60,7 +60,7 @@
                                     <li><a href="{% url 'home' %}">Home</a>
                                     </li>
                                     <li><a href="{% url 'about' %}">About Us</a></li>
-                                    <li><a href="{% url 'category' '5'%}">Products</a></li>
+                                    <li><a href="{% url 'category' '2'%}">Products</a></li>
                                     <li class="menu-item-has-children"><a href="blog.html">Blog</a>
                                         <ul class="submenu">
                                             <li><a href="blog.html">Our Blog</a></li>
@@ -71,8 +71,9 @@
                                 </ul>
                             </div>
                             <div class="header-action d-none d-md-block">
+                                
                                 <ul>
-                                    <li class="header-btn"><a href="adoption.html" class="btn">Call back <img src="{% static 'img/icon/w_pawprint.png' %}" alt=""></a></li>
+                                    <li class="header-btn"><a href="{% static 'files/catalog.pdf' %}" download class="btn">Download Catalog <img src="{% static 'img/icon/w_pawprint.png' %}" alt=""></a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -154,7 +155,7 @@
                         </div>
                         <div class="footer-social">
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.facebook.com/p/Premium-Health-Remedies-100080780957354/"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
@@ -213,7 +214,11 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright-text">
-                        <p>Copyright &copy; 2025 Premium Health Remedies. All Rights Reserved.</p>
+                        <p>Copyright &copy; <b id="yearnow"></b><script>
+                            const d = new Date();
+                            let year = d.getFullYear();
+                            document.getElementById("yearnow").innerHTML = year;
+                            </script> Premium Health Remedies. All Rights Reserved.</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-none d-md-block">

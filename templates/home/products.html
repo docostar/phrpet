@@ -68,20 +68,6 @@ Product-{{product.name}}
                     <div class="shop-details-content">
                         <span>{{ product.category.name }}</span>
                         <h2 class="title">{{ product.name }}</h2>
-                        <div class="shop-details-review">
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span>( 01 Review )</span>
-                        </div>
-                        <div class="shop-details-price">
-                            <h2 class="price">${{ product.mrp }}</h2>
-                            <h5 class="stock-status">- IN Stock</h5>
-                        </div>
                         <p>{{ product.description }}</p>
                         <div class="shop-details-bottom">
                             <ul>
@@ -96,10 +82,6 @@ Product-{{product.name}}
                                 <li class="sd-category">
                                     <span class="title">Categories :</span>
                                     <a href="{% url 'category' product.category.id %}">{{ product.category.name }}</a>
-                                </li>
-                                <li class="sd-sku">
-                                    <span class="title">SKU :</span>
-                                    <a href="shop.html">H#21546</a>
                                 </li>
                                 <li class="sd-share">
                                     <span class="title">Share Now :</span>
@@ -123,14 +105,8 @@ Product-{{product.name}}
                             <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab"
                                 aria-controls="details" aria-selected="true">Benifits</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="val-tab" data-toggle="tab" href="#val" role="tab" aria-controls="val"
-                                aria-selected="false">Information</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab"
-                                aria-controls="review" aria-selected="false">Reviews (0)</a>
-                        </li>
+                        
+                        
                     </ul>
                     <div class="tab-content" id="myTabContentTwo">
                         <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
@@ -142,44 +118,7 @@ Product-{{product.name}}
                                 </ul>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="val" role="tabpanel" aria-labelledby="val-tab">
-                            <div class="product-desc-info">
-                                <div class="row">
-                                    <div class="col-xl-3 col-md-5">
-                                        <div class="product-desc-img">
-                                            <img src="{% static 'img/product/desc_img.jpg' %}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-9 col-md-7">
-                                        <h5 class="small-title">100% Knit Knacks</h5>
-                                        <p>Cramond Leopard & Pythong Print Anorak Jacket In Beige but also the leap into
-                                            electronic typesetting, remaining lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                        <ul class="product-desc-list">
-                                            <li>65% poly, 35% rayon</li>
-                                            <li>Partially lined</li>
-                                            <li>Hidden front button closure with keyhole accents</li>
-                                            <li>Button cuff sleeves</li>
-                                            <li>Lightweight semi-sheer fabrication</li>
-                                            <li>Made in USA</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                            <div class="product-desc-review">
-                                <div class="review-title mb-20">
-                                    <h4 class="title">Customer Reviews (0)</h4>
-                                </div>
-                                <div class="left-rc">
-                                    <p>No reviews yet</p>
-                                </div>
-                                <div class="right-rc">
-                                    <a href="#">Write a review</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        
                 </div>
             </div>
         </div>

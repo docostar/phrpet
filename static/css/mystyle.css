@@ -24,6 +24,12 @@
     object-fit: cover;
 }
 
+#vision_img{
+    width:367px; 
+    height:430px; 
+    object-fit: cover;
+}
+
 .whatsapp-button {
             display: inline-block;
             color: white;

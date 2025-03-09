@@ -110,7 +110,10 @@ Home Page
                         <div class="adoption-content">
                             <h2 class="title">Partnering with <span> Premium Health Remedies:</span> Ensuring Joyful Pet Health! </h2>
                             <p>For vets and pet lovers in India: Choose Premium Health Remedies for innovative, quality products. We combine expert care with love, bringing you solutions trusted by professionals and cherished by pet parents.</p>
-                            <a href="{% url 'category' '2'%}" class="btn">Products 
+                            <a href="{% static 'files/catalog.pdf' %}" download class="btn">Download Catalog 
+                                <img src="{% static 'img/icon/w_pawprint.png' %}" alt="">
+                            </a><br/><br/>
+                            <a href="{% url 'category' '2'%}" class="btn">View Products 
                                 <img src="{% static 'img/icon/w_pawprint.png' %}" alt="">
                             </a>
                         </div>
@@ -122,38 +125,26 @@ Home Page
                                 <div class="col-md-6">
                                     <div class="breeder-active owl-carousel">
                                         <div class="breeder-item">
-                                            <a href="breeder-details.html">
-                                                <img src="{% static 'img/images/breeder_img01.jpg' %}" alt="">
+                                            <a href="{% url 'about' %}">
+                                                <img src="{% static 'img/images/vision_1.jpg' %}" alt="">
                                             </a>
                                         </div>
                                         <div class="breeder-item">
-                                            <a href="breeder-details.html">
-                                                <img src="{% static 'img/images/breeder_img02.jpg' %}" alt="">
+                                            <a href="{% url 'about' %}">
+                                                <img  src="{% static 'img/images/vision_2.jpg' %}" alt="">
                                             </a>
                                         </div>
-                                        <div class="breeder-item">
-                                            <a href="breeder-details.html">
-                                                <img src="{% static 'img/images/breeder_img03.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="breeder-item">
-                                            <a href="breeder-details.html">
-                                                <img src="{% static 'img/images/breeder_img04.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="breeder-item">
-                                            <a href="breeder-details.html">
-                                                <img src="{% static 'img/images/breeder_img05.jpg' %}" alt="">
-                                            </a>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="breed-services-info" data-background="{% static 'img/bg/breed_services_bg.jpg' %}">
-                                        <h5 class="sub-title">Dog Breeder</h5>
-                                        <h3 class="title">Available for Breed</h3>
-                                        <p>The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provides dogs</p>
-                                        <a href="dog-list.html" class="btn">More Pets 
+                                        <h5 class="sub-title">About PHR</h5>
+                                        <h3 class="title">PHR</h3>
+                                        <p>Premium health remedies is a Gujarat based companion animal health care company ,established in 2021.
+                                            we started by TQM,TPM,sales marketing team which is leading market from year.
+                                        </p>
+                                        <a href="{% url 'about' %}" class="btn">More about PHR
                                             <img src="{% static 'img/icon/w_pawprint.png' %}" alt="">
                                         </a>
                                     </div>
@@ -188,7 +179,7 @@ Home Page
             <div class="container custom-container">
                 <div class="row adopt-active">
                     {% for category in categories %}
-                        <div class="col-xl-3">
+                        <div class="col-xl-6">
                             <div class="adoption-item">
                                 <div class="adopt-thumb">
                                     <a href="{% url 'category' category.id %}">
@@ -197,7 +188,6 @@ Home Page
                                     <span class="status">New</span>
                                 </div>
                                 <div class="adopt-content">
-                                    <div class="adopt-date"><i class="far fa-calendar-alt"></i> Created: {{ category.created_at|date:"Y" }}</div>
                                     <h3 class="title">
                                         <a href="{% url 'category' category.id %}">{{ category.name }}</a>
                                     </h3>
@@ -238,7 +228,7 @@ Home Page
                                         <div class="card-header" id="heading{{ forloop.counter }}">
                                             <h2 class="mb-0">
                                                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                                                    data-target="#collapse{{ forloop.counter }}" aria-expanded="{{ forloop.first|yesno:'true,false' }}"
+                                                    data-target="#collapse{{ forloop.counter }}" aria-expanded="{{ forloop.first|yesno:'true,false'}}"
                                                     aria-controls="collapse{{ forloop.counter }}">
                                                     {{ faq.question }}
                                                 </button>
@@ -301,7 +291,7 @@ Home Page
             </section>
             <!-- testimonial-area-end -->
 
-            <!-- blog-area -->
+            <!-- blog-area 
             <section class="blog-area pt-110 pb-60">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -383,6 +373,6 @@ Home Page
                     </div>
                 </div>
             </section>
-            <!-- blog-area-end -->
+            blog-area-end -->
 
 {% endblock %}
