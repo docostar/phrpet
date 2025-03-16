@@ -29,6 +29,8 @@ class Category(models.Model):
                 img.save(picture_path)  # Save the resized image back to the same path
 
 
+
+
 class Product(models.Model):
     name = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="products")
@@ -97,6 +99,30 @@ class Testimonial(models.Model):
             with Image.open(picture_path) as img:
                 # Resize the image to 89x89 while maintaining quality
                 img = img.resize((89,89), resample=Image.Resampling.LANCZOS)
+                img.save(picture_path)  # Save the resized image back to the same path
+
+
+class Slider(models.Model):
+    title = models.CharField(max_length=100, unique=True)
+    description = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to="slider/", blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = "Slider"
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        # Save the object
+        super().save(*args, **kwargs)
+
+        # Resize the uploaded image
+        if self.image:
+            picture_path = self.image.path  # Get the file path of the uploaded image
+            with Image.open(picture_path) as img:
+                # Resize the image to 89x89 while maintaining quality
+                img = img.resize((1920,793), resample=Image.Resampling.LANCZOS)
                 img.save(picture_path)  # Save the resized image back to the same path
 
 """

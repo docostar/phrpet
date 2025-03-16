@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Product,Category,FAQ,Testimonial
+from .models import Product,Category,FAQ,Testimonial,Slider
 from random import shuffle
 from .forms import ContactForm
 from django.contrib import messages
@@ -12,7 +12,8 @@ def home_view(request):
     categories = Category.objects.all()
     faqs = FAQ.objects.filter(is_active=True)  # Fetch only active FAQ
     testimonials = Testimonial.objects.filter(is_active=True)  # Fetch only active testimonials
-    return render(request, 'home/index.html',{'categories': categories,'faqs':faqs,'testimonials':testimonials})
+    sliders = Slider.objects.all()
+    return render(request, 'home/index.html',{'categories': categories,'faqs':faqs,'testimonials':testimonials,'sliders':sliders})
 
 def home2_view(request):
     return render(request, 'Petco/index.html')
@@ -32,8 +33,9 @@ def product_detail(request,product_id):
         other_products = list(Product.objects.exclude(id__in=excluded_ids))  # Convert to list explicitly
         shuffle(other_products)  # Shuffle for randomness
         related_products = list(related_products) + other_products[:4 - len(related_products)]  # Safely combine lists
-    benefits_list = product.benefits.split(",") if product.benefits else []
-    return render(request, 'home/products.html', {'product': product, 'benefits_list': benefits_list, 'related_products':related_products})
+    benefits_list = product.benefits.split(".") if product.benefits else []
+    composition_list = product.composition.split(",") if product.composition else []
+    return render(request, 'home/products.html', {'product': product, 'benefits_list': benefits_list, 'related_products':related_products,'composition_list':composition_list})
 
 def categories_view(request,category_id):
     categories = Category.objects.all()

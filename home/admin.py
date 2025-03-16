@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, ProductImage, FAQ, Testimonial
+from .models import Category, Product, ProductImage, FAQ, Testimonial, Slider
 
 
 # Change site header and title
@@ -36,4 +36,9 @@ class TestimonialAdmin(admin.ModelAdmin):
     list_filter = ('doctor_city', 'created_at')  # Filters for admin interface
     search_fields = ('doctor_name', 'clinic_name', 'doctor_city')  # Searchable fields
     ordering = ('-created_at',)  # Order testimonials by creation date (newest first)
+
+@admin.register(Slider)
+class SliderAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ('title',)
 

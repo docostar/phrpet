@@ -24,38 +24,30 @@ Home Page
                                                 Human Shampoo on Dogs After six days of deliberation, the jury found Hernandez guilty of first-degree murder.
                                             </p>
                                         </div>
-                                        <a href="dog-list.html" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">
-                                            View More <img src="{% static 'img/icon/w_pawprint.png' %}" alt="Paw Print Icon">
-                                        </a>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Slide 2 -->
-                    <div class="single-slider slider-bg d-flex align-items-center" data-background="{% static 'img/slider/s_slider_bg02.jpg' %}">
-                        <div class="container custom-container">
-                            <div class="row">
-                                <div class="col-xl-5 col-lg-7 col-md-10">
-                                    <div class="slider-content">
-                                        <div class="slider-title">
-                                            <h2 class="title" data-animation="fadeInUpBig" data-delay=".2s" data-duration="1.2s">
-                                                Best Friend <span>with</span> Happy Time
-                                            </h2>
+                    {% for slider in sliders %}
+                        <div class="single-slider slider-bg d-flex align-items-center" data-background="{{ slider.image.url }}">
+                            <div class="container custom-container">
+                                <div class="row">
+                                    <div class="col-xl-5 col-lg-7 col-md-10">
+                                        <div class="slider-content">
+                                            <div class="slider-title">
+                                                <h2 class="title" data-animation="fadeInUpBig" data-delay=".2s" data-duration="1.2s">
+                                                    {{ slider.title }}
+                                                </h2>
+                                            </div>
                                         </div>
-                                        <div class="slider-desc">
-                                            <p class="desc" data-animation="fadeInUpBig" data-delay=".4s" data-duration="1.2s">
-                                                Human Shampoo on Dogs After six days of deliberation, the jury found Hernandez guilty of first-degree murder.
-                                            </p>
-                                        </div>
-                                        <a href="dog-list.html" class="btn" data-animation="fadeInUpBig" data-delay=".6s" data-duration="1.2s">
-                                            View More <img src="{% static 'img/icon/w_pawprint.png' %}" alt="Paw Print Icon">
-                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </section>
             

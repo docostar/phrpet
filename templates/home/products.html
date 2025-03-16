@@ -16,7 +16,7 @@ Product-{{product.name}}
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
                             <li class="breadcrumb-item"><a href="{% url 'category' product.category.id %}">{{product.category.name}}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Shop Details</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -73,7 +73,13 @@ Product-{{product.name}}
                             <ul>
                                 <li class="sd-category">
                                     <span class="title">Composition :</span>
-                                    <p>{{ product.composition }}</p>
+                                    <table border="1">
+                                    {% for composition in composition_list %}
+                                        <tr>
+                                            <td width="300" align="center">{{ composition }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
                                 </li>
                                 <li class="sd-packing">
                                     <span class="title">Presentation :</span>
