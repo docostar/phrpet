@@ -68,9 +68,13 @@ Product-{{product.name}}
                     <div class="shop-details-content">
                         <span>{{ product.category.name }}</span>
                         <h2 class="title">{{ product.name }}</h2>
-                        <p>{{ product.description }}</p>
+                        
                         <div class="shop-details-bottom">
                             <ul>
+                                <li class="sd-packing">
+                                    <span class="title">Description :</span>
+                                </li>
+                                <p>{{ product.description }}</p>
                                 <li class="sd-category">
                                     <span class="title">Composition :</span>
                                     <table border="1">
@@ -84,6 +88,10 @@ Product-{{product.name}}
                                 <li class="sd-packing">
                                     <span class="title">Presentation :</span>
                                     {{ product.packing }}
+                                </li>
+                                <li class="sd-packing">
+                                    <span class="price">MRP :</span>
+                                    ₹ {{ product.mrp }}
                                 </li>
                                 <li class="sd-category">
                                     <span class="title">Categories :</span>

@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    container_name: phrpet-web
+    ports:
+      - "8500:8000"
+    volumes:
+      - .:/djangoapp
+    env_file:
+      - .env
+    networks:
+      - postgre_docker_default   # 👈 Same as your DB container
+
+networks:
+  postgre_docker_default:
+    external: true

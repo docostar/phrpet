@@ -15,8 +15,9 @@ Home Page
                                 <h2 class="title">Blog Single</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Blog Single</li>
+                                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="{% url 'blog:blog_list' %}">Blog</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Our Blog</li>
                                     </ol>
                                 </nav>
                             </div>

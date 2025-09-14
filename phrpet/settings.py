@@ -37,10 +37,11 @@ EMAIL_HOST_USER = os.getenv("EMAIL_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_EMAIL')
 
-ALLOWED_HOSTS = ['code.rokan.online','rokan.online','phr.rokan.online','https://phr.rokan.online']
+#ALLOWED_HOSTS = ['code.rokan.online','rokan.online','phr.rokan.online','https://phr.rokan.online','phrpet.com','https://www.phrpet.com/']
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS","").split(",")
 
-CSRF_TRUSTED_ORIGINS = ['https://phr.rokan.online', 'https://www.phr.rokan.online']
-
+#CSRF_TRUSTED_ORIGINS = ['https://phr.rokan.online', 'https://www.phr.rokan.online','https://phrpet.com','https://www.phrpet.com','http://phrpet.com']
+CSRF_TRUSTED_ORIGINS = os.getenv("DJANGO_CSRF_TRUSTED_ORIGINS","").split(",")
 
 # Application definition
 
@@ -55,12 +56,14 @@ INSTALLED_APPS = [
 
 EXTERNAL_APPS = [
         'home',
+        'blog',
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + EXTERNAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -103,6 +106,7 @@ DATABASES = {
         'PASSWORD': os.getenv("DB_PASSWORD"),  # The password for the user
         'HOST': os.getenv("DB_HOST"),   # Set to your database host, or use 'localhost' for local setups
         'PORT': os.getenv("DB_PORT"),        # Default PostgreSQL port
+        'CONN_MAX_AGE': None,
         
     }
 }
@@ -153,6 +157,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Main static directory where you'll place CSS, JS, etc.
 ]
 
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

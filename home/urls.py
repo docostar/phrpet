@@ -10,6 +10,5 @@ urlpatterns = [
     path('demo', demo_product_view, name='demo'),
     path('category/<int:category_id>', categories_view, name='category'),
     path('send-email/', send_email_view, name='send_email'),
-    path('blog/', blog_view, name='blog'),
     path('about/', about_view, name='about'),
 ]

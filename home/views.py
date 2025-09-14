@@ -54,7 +54,7 @@ def contact_view(request):
             subject = f"New Contact Form Submission: {name}"
             full_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
             from_email = 'matrufinancial@gmail.com'  # Your Gmail address
-            recipient_list = ['rahulbusiness2012@gmail.com'] # Replace with the desired recipient email
+            recipient_list = ['happy621993@gmail.com'] # Replace with the desired recipient email
 
             try:
                 send_mail(
@@ -86,9 +86,6 @@ def send_email_view(request):
         return HttpResponse('Email sent successfully!')
     except Exception as e:
         return HttpResponse(f'Error: {str(e)}')
-
-def blog_view(request):
-    return render(request, 'home/blog.html')
 
 def about_view(request):
     return render(request, 'home/about.html')

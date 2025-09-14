@@ -54,18 +54,14 @@
                     <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
                     <div class="menu-wrap">
                         <nav class="menu-nav show">
-                            <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'img/logo/phr_logo_small.png' %}" alt=""></a></div>
+                            <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'img/logo/phr_logo_small.jpg' %}" alt=""></a></div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
                                     <li><a href="{% url 'home' %}">Home</a>
                                     </li>
                                     <li><a href="{% url 'about' %}">About Us</a></li>
                                     <li><a href="{% url 'category' '2'%}">Products</a></li>
-                                    <li class="menu-item-has-children"><a href="blog.html">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">Our Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
+                                    <li class="menu-item-has-children"><a href="{% url 'blog:blog_list' %}">Blog</a>
                                     </li>
                                     <li><a href="{% url 'contact' %}">Contacts Us</a></li>
                                 </ul>
@@ -82,7 +78,7 @@
                     <div class="mobile-menu">
                         <nav class="menu-box">
                             <div class="close-btn"><i class="fas fa-times"></i></div>
-                            <div class="nav-logo"><a href="{% url 'home' %}"><img src="{% static 'img/logo/logo.png' %}" alt="" title=""></a></div>
+                            <div class="nav-logo"><a href="{% url 'home' %}"><img src="{% static 'img/logo/logo_website.jpg' %}" alt="" title=""></a></div>
                             <div class="menu-outer">
                                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                             </div>
@@ -140,7 +136,7 @@
                 <div class="col-3">
                     <div class="footer-widget">
                         <div class="f-logo">
-                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/phr_logo_small.png' %}" alt=""></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/logo_website.jpg' %}" alt=""></a>
                         </div>
                         <div class="footer-text">
                             <p>Choose us for high-quality pet products and medicines, trusted by veterinary doctors and pet owners. 
@@ -155,6 +151,7 @@
                         </div>
                         <div class="footer-social">
                             <ul>
+                                <li><a href="https://wa.me/9624000995?text=Hello%20I%20have%20a%20question%20about%20your%20Products."><i class="fab fa-whatsapp"></i></a></li>
                                 <li><a href="https://www.facebook.com/p/Premium-Health-Remedies-100080780957354/"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-youtube"></i></a></li>
@@ -171,7 +168,7 @@
                                 <li><a href="{% url 'home' %}">Home</a></li>
                                 <li><a href="{% url 'about' %}">About Us</a></li>
                                 <li><a href="{% url 'category' '5' %}">Products</a></li>
-                                <li><a href="{% url 'blog' %}">Blog</a></li>
+                                <li><a href="{% url 'blog:blog_list' %}">Blog</a></li>
                                 <li><a href="{% url 'contact' %}">Contact Us</a></li>
                             </ul>
                         </div>

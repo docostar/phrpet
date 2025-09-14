@@ -1,0 +1,7 @@
+Welcome
+{% for post in posts %}
+    <h2><a href="{% url 'blog_detail' post.slug %}">{{ post.title }}</a></h2>
+    <p>{{ post.created_at|date:"F d, Y" }} by {{ post.author }}</p>
+    <p>{{ post.content|truncatewords:50 }}</p>
+    <hr>
+{% endfor %}
